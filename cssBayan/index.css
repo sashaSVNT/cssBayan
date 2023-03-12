@@ -7,10 +7,23 @@ body {
   color: rgb(41, 8, 255);
 }
 
+h1{
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: black;
+}
 
 .bayan{
   max-width: 50%;
   margin: 1rem auto;
+}
+
+.bayan:hover{
+  color: black;
+}
+
+.bayan:hover .bayan__title span{
+  visibility: visible;
 }
 
 .bayan__item{
@@ -29,8 +42,8 @@ body {
 .bayan__image{
   align-self: center;
   width: 20rem;
-  height: 20rem;
-  margin-bottom: 1rem;
+  height: 0rem;
+  overflow: hidden;
 }
 
 .bayan__title{
@@ -39,5 +52,27 @@ body {
   padding: 1rem 0;
 }
 
+.bayan__title span{
+  visibility: hidden;
+}
 
+.bayan__input:hover + .bayan__title > span{
+  transform: rotate(45deg);
+  transition: transform 0.2s ease 0.1s;
+}
+
+.bayan__input:checked + .bayan__title > span{
+  transform: rotate(45deg);
+}
+
+.bayan__input:checked ~ .bayan__image{
+  height: 20rem;
+  margin-bottom: 1rem;
+}
+
+.bayan__input:hover ~ .bayan__image{
+  height: 20rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease 0.1s;
+}
 
